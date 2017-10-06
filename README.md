@@ -27,3 +27,16 @@ First we want to start a docker, that contains a `PostgreSQL` database, with
         - POSTGRES_PASSWORD for Password ("12345")
         - SRID set the SRID reference (standardvalues / needed for 3dcitydb) ("25832")
         - SRSName set the SRSName reference (standardvalues / needed for 3dcitydb) ("urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH")
+
+
+## Helpful next steps:
+A webinterface to the database schema is often quite helpful. Thus we use
+`phpPgAdmin` to display our data.
+
+- pull and run the `phpPgAdmin` docker container:
+
+  `$ docker run --name phppgadmin --link postgres:db -ti -d -p 8080:80 keepitcool/phppgadmin`
+
+      - --name again for the docker container name ("phppgadmin")
+      - --link for the docker container link with [database_name]:db ("postgres")
+      - -p is use to tell the container on with port he is reachable under the host machine ("8080"), so in this case you will reach it on http://localhost:8080/
