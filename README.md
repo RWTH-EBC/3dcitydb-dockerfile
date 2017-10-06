@@ -28,6 +28,14 @@ First we want to start a docker, that contains a `PostgreSQL` database, with
         - SRID set the SRID reference (standardvalues / needed for 3dcitydb) ("25832")
         - SRSName set the SRSName reference (standardvalues / needed for 3dcitydb) ("urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH")
 
+## Storage
+For persistent storage you can mount a docker volume with an host volume. Then, the stored data should be available at the host machine.
+
+therefore use the -v option like in the example:
+
+    `$ docker run --name postgres -p 5432:5432 -v your/path:/var/lib/postgresql/data -e POSTGRES_DB=testdb -e POSTGRES_USER=testdb -e POSTGRES_PASSWORD=12345 -e SRID=25832 -e SRSName=urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH -d michamans/postgis-3dcitydb`
+
+
 
 ## Helpful next steps:
 A webinterface to the database schema is often quite helpful. Thus we use
