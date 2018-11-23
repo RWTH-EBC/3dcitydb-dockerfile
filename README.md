@@ -1,3 +1,6 @@
+# Archived
+As first level support repository is availabe under https://github.com/tum-gis/3dcitydb-docker-postgis from https://github.com/tum-gis thanks to the work of @BWibo and following
+
 # 3dcitydb-dockerfile
 This repo contains the dockerfile to create a PostgreSQL Database with Postgis and 3dcitydb extention
 
